@@ -78,7 +78,7 @@ public class LevelSetup {
     }
     
     public int getPlayerStartLoc() {
-        return startingLocation;
+        return 0;
     }
     
 }
