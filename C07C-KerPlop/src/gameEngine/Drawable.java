@@ -10,6 +10,4 @@ package gameEngine;
  */
 public interface Drawable {
 	public void draw();
-
-	void move(Drawable[] gameBoard, int playerLocation);
 }

@@ -21,11 +21,4 @@ public class Bridge implements Drawable{
 		System.out.print("Going over a bridge...");
 	}
 
-
-
-	@Override
-	public void move(Drawable[] gameBoard, int playerLocation) {
-		// TODO Auto-generated method stub
-		
-	}
 }

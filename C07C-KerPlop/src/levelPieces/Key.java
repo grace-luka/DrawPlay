@@ -3,6 +3,7 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
+
 // key "k" - GamePiece + Interaction - GET_POINT (Gives point if the player lands on it)
 public class Key extends GamePiece{
 	protected char symbol;
@@ -23,4 +24,5 @@ public class Key extends GamePiece{
 		
 		return InteractionResult.GET_POINT; //Increase the level 
 	}
+	
 }

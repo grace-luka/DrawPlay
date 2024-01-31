@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author Cyndi Rader
  *
  */
-public class Player implements Drawable {
+public class Player implements Drawable{
 
 	/**
 	 * The number of hits that can be taken before death.

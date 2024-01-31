@@ -46,20 +46,20 @@ public class LevelSetup {
         	interactingPieces.add(hole);
         }
         
-        int numDoorway = rand.nextInt(2);
-        for (int i = 0; i <= numDoorway; i++) {
-        	int doorwayPosition = rand.nextInt(20);
-        	Doorway door = new Doorway('d', "Doorway", doorwayPosition);
-        	interactingPieces.add(door);
+        if (levelNum < 2) {
+        	int numDoorway = rand.nextInt(2);
+        	for (int i = 0; i <= numDoorway; i++) {
+        		int doorwayPosition = rand.nextInt(20);
+        		Doorway door = new Doorway('d', "Doorway", doorwayPosition);
+        		interactingPieces.add(door);
+        	}
         }
 
-        int numBridges = rand.nextInt(3);
-        for (int i = 0; i <= numSnakes; i++){
-            int bridgePosition = rand.nextInt(20) + 1;
-            Bridge cobbleStone = new Bridge('b', "Bridge", bridgePosition);
-            interactingPieces.add(cobbleStone);
-        }
+        int bridgePosition = rand.nextInt(20);
+        Bridge cobbleStone = new Bridge('b', "Bridge", bridgePosition);
 
+        int keyPosition = rand.nextInt(20);
+        Key skeleton = new Key('k', "Key", keyPosition);
         
     	
     }

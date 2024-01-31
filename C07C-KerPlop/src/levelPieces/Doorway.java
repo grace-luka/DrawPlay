@@ -2,6 +2,7 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
+
 //doorway "d" - GamePiece + Interaction - ADVANCE (interacts on same location)
 public class Doorway extends GamePiece{
     protected char symbol;
@@ -22,8 +23,4 @@ public class Doorway extends GamePiece{
 		
 		return InteractionResult.ADVANCE; //Increase the level 
 	}
-
-
-
-
 }
