@@ -4,7 +4,7 @@ import gameEngine.InteractionResult;
 
 
 // black hole "b" - GamePiece + Interaction - KILL (Will kill a player that is on that space or one space away in any direction)
-public class Blackhole extends GamePiece{
+public class Blackhole extends GamePiece implements Drawable{
 	protected char symbol;
 	private String label ;
 	// Stores the piece location, which will be needed to interact
@@ -21,5 +21,9 @@ public class Blackhole extends GamePiece{
 	@Override
 	public InteractionResult interact(Drawable [] gameBoard, int playerLocation) {
 		return InteractionResult.KILL; //Increase the level 
+	}
+	
+	public void draw() {
+		System.out.println('b');
 	}
 }

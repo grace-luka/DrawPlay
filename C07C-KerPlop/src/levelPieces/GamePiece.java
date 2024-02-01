@@ -12,7 +12,7 @@ import gameEngine.InteractionResult;
  * @author Cyndi Rader
  *
  */
-public abstract class GamePiece implements Drawable {
+public abstract class GamePiece implements Drawable{
 	// Interfaces cannot have instance variables
 	protected char symbol;
 	private String label ;

@@ -4,7 +4,7 @@ import gameEngine.InteractionResult;
 
 
 //doorway "d" - GamePiece + Interaction - ADVANCE (interacts on same location)
-public class Doorway extends GamePiece{
+public class Doorway extends GamePiece implements Drawable{
     protected char symbol;
 	private String label ;
 	// Stores the piece location, which will be needed to interact
@@ -23,4 +23,9 @@ public class Doorway extends GamePiece{
 		
 		return InteractionResult.ADVANCE; //Increase the level 
 	}
+	
+	public void draw() {
+		System.out.println('d');
+	}
+	
 }

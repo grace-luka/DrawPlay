@@ -4,7 +4,7 @@ import gameEngine.InteractionResult;
 import gameEngine.Moveable;
 
 // frog "f" - HIT (Jumps to an open space only if there is an open space next to it, can hit you within 2 spaces)
-public class Frog extends GamePiece implements Moveable{
+public class Frog extends GamePiece implements Moveable, Drawable{
 	protected char symbol;
 	private String label ;
 	// Stores the piece location, which will be needed to interact
@@ -20,13 +20,48 @@ public class Frog extends GamePiece implements Moveable{
 
 	@Override
 	public InteractionResult interact(Drawable [] gameBoard, int playerLocation) {
+		
 		return InteractionResult.HIT; //Increase the level 
 	}
 
 	@Override
-	public void move(Drawable[] gameBoard, int playerLocation) {
-		// TODO Auto-generated method stub
+	public void move(Drawable[] gameBoard, int location) {
 		
+
+
+		if (location + 2 > gameBoard.length - 1){
+			if (gameBoard[location - 2] == null){
+				location -= 2;
+			else {
+				int i = location;
+				while (i > 0){
+						if (gameBoard[i] == null){
+							location = i
+						}
+				}
+			}
+			}
+		}
+		else if (gameBoard[location + 2] == null){
+			location += 2;
+		}
+		else{
+			int i = location;
+			while(i < gameBoard.length){
+				if (gameBoard[i] == null){
+					location = i;
+					break;
+				}
+				else{
+					i+= 2;
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void draw() {
+		System.out.print('f');
 	}
 
 }

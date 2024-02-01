@@ -18,7 +18,7 @@ public class Bridge implements Drawable{
     @Override
 	public void draw() {
         // FIXME: Not sure if this is what this should be printing out
-		System.out.print("Going over a bridge...");
+		System.out.println("Going over a bridge...");
 	}
 
 }
