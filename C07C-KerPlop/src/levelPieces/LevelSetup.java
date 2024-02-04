@@ -41,8 +41,8 @@ public class LevelSetup {
         
         int numBlackhole = rand.nextInt(2);
         for (int i =0; i <= numBlackhole; i++) {
-        	int blackHolePosition = rand.nextInt(20);
-        	Blackhole hole = new Blackhole('b', "Blackhole", blackHolePosition);
+        	int blackHolePosition = rand.nextInt(3);
+        	Blackhole hole = new Blackhole('b', "Blackhole", blackHolePosition + 15);
         	interactingPieces.add(hole);
         }
         

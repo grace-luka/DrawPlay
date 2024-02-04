@@ -20,7 +20,11 @@ public class Blackhole extends GamePiece implements Drawable{
 
 	@Override
 	public InteractionResult interact(Drawable [] gameBoard, int playerLocation) {
-		return InteractionResult.KILL; //Increase the level 
+		if (playerLocation == location || playerLocation == location + 1 || playerLocation == location - 1){
+			return InteractionResult.KILL;
+		} else {
+			return InteractionResult.NONE;
+		}
 	}
 	
 	public void draw() {

@@ -20,42 +20,22 @@ public class Frog extends GamePiece implements Moveable, Drawable{
 
 	@Override
 	public InteractionResult interact(Drawable [] gameBoard, int playerLocation) {
-		
-		return InteractionResult.HIT; //Increase the level 
+		if (playerLocation == (location + 1) || playerLocation == (location - 1)){
+			return InteractionResult.HIT; //Increase the level
+		} else {
+			return InteractionResult.NONE;
+		}
 	}
 
 	@Override
 	public void move(Drawable[] gameBoard, int location) {
-		
-
-
-		if (location + 2 > gameBoard.length - 1){
-			if (gameBoard[location - 2] == null){
-				location -= 2;
-			else {
-				int i = location;
-				while (i > 0){
-						if (gameBoard[i] == null){
-							location = i
-						}
-				}
-			}
-			}
-		}
-		else if (gameBoard[location + 2] == null){
+		// if two moves to the right is still on the board and is empty, move two moves to the right
+		if ((location + 2 < gameBoard.length) && (gameBoard[location + 2] == null)) {
 			location += 2;
 		}
-		else{
-			int i = location;
-			while(i < gameBoard.length){
-				if (gameBoard[i] == null){
-					location = i;
-					break;
-				}
-				else{
-					i+= 2;
-				}
-			}
+		// if two moves to the left is still on the board and is empty, move two moves to the left
+		else if ((location - 1 >= 0) && (gameBoard[location - 1] == null)){
+			location -= 2;
 		}
 	}
 	
