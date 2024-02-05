@@ -42,6 +42,16 @@ public class GameEngine {
 	// Player keeps track of player status and controls player movement/location
 	private Player player;
 
+
+	
+	/*
+	public Drawable[] getGameBoard() {
+		return gameBoard;
+	}
+	*/
+	
+
+
 	/**
 	 * Driver for the game. Creates game and plays it.
 	 * 

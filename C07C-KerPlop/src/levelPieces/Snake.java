@@ -1,3 +1,13 @@
+/**
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Snake - This class represents our snake gamepiece. The snake is moveable, drawable, and interacts.
+ The snake moves forward one space if it can, if not it moves backwards if it can, and if not it stays still.
+ Its interaction result is HIT, and it only hits if it is in the same location as the player.  
+ * Date: 2/5/2024
+ * Sources:
+ */
+
+
 package levelPieces;
 
 import gameEngine.Drawable;
@@ -10,8 +20,6 @@ import gameEngine.Player;
 public class Snake extends GamePiece implements Moveable{
 	protected char symbol;
 	private String label ;
-	// Stores the piece location, which will be needed to interact
-	// with the player. 
 	private int location;
 	
 	public Snake(char s, String l, int lo) {
@@ -21,19 +29,20 @@ public class Snake extends GamePiece implements Moveable{
 		this.location = lo;
 	}
 	
+	// If the player and snake are in the same location, the interaction result is HIT. Otherwise,
+	// there is no interaction result.
 	@Override
 	public InteractionResult interact(Drawable [] gameBoard, int playerLocation) {
-		if (playerLocation == (location + 1) || playerLocation == (location - 1)){
-			//Player.takeDamage();
-			return InteractionResult.HIT; //Increase the level
-			
+		if (playerLocation == location){
+			return InteractionResult.HIT;
 		} else {
 			return InteractionResult.NONE;
 		}
 	}
 	
+	// The snake moves right if it is available, if not it moves left, if neither are available it stays in place
 	@Override
-	public void move(Drawable[] gameBoard, int location) {
+	public void move(Drawable[] gameBoard, int playerLocation) {
 		// if you're not in the farthest right place on the board and the next spot to the right is empty, move right
 		if ((location + 1 < gameBoard.length) && (gameBoard[location + 1] == null)) {
 			location++;
@@ -43,11 +52,6 @@ public class Snake extends GamePiece implements Moveable{
 			location--;
 		}
 	}
-
-	//@Override
-	//public void draw() {
-		//System.out.println('s');
-	//}
 
 
 }

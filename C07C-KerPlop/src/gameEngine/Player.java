@@ -12,7 +12,8 @@ import java.util.Scanner;
  */
 public class Player implements Drawable{
 
-	/**
+	/**4
+	 * 
 	 * The number of hits that can be taken before death.
 	 */
 	public static final int POINTS_TO_DIE = 2;

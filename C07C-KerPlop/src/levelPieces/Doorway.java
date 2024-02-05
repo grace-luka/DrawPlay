@@ -1,3 +1,12 @@
+/**
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Doorway - this class represnts one of our unmovable and interaction classes, this doorway advances
+ * you to the next level of the same when it shares a space with the player. We implemented the advance 
+ * result for this classes interaction. 
+ * Date: 2/5/2024
+ * Sources: 
+ */
+
 package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
@@ -11,10 +20,10 @@ public class Doorway extends GamePiece{
 	// with the player. 
 	private int location;
 
-    public Doorway(char b, String l, int lo) {
+    public Doorway(char s, String l, int lo) {
 		super(s, l, lo);
-		this.symbol = b;
-		this.label = "bridge";
+		this.symbol = s;
+		this.label = l;
 		this.location = lo;
 	}
 
