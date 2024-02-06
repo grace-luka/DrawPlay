@@ -25,12 +25,12 @@ public class Bridge extends GamePiece implements Drawable{
 		this.location = lo;
 	}
 
-/*
+
 	@Override
 	public InteractionResult interact(Drawable[] gameBoard, int playerLocation) {
 		// TODO Auto-generated method stub
 		return InteractionResult.NONE;
 	}
-*/
+
 
 }

@@ -23,25 +23,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class LevelSetup {
-	
+    //Whenever gamepieces with one of these attributes is created, they are added to the corresponding array list.
 	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
     private ArrayList<Moveable> movingPieces = new ArrayList<Moveable>();
     private Drawable[] levelGameBoard = new Drawable[GameEngine.BOARD_SIZE];
 
     public void createLevel(int levelNum){
+        // creates random number of new frog objects and adds the frogs to interactingPieces, movingPieces, and levelGameBoard
         Random rand = new Random();
-
         int numFrogs = rand.nextInt(1);
         for (int i = 0; i <= numFrogs; i++) {
             int frogPosition = rand.nextInt(20) + 1;
-            //System.out.println(frogPosition);
         	Frog ribbit = new Frog('f', "Frog", frogPosition);
             interactingPieces.add(ribbit);
-            //System.out.println(interactingPieces);
         	movingPieces.add(ribbit);
             levelGameBoard[frogPosition] = ribbit;
         }
 
+        // creates random number of new snake objects and adds them to interactingPieces, movingPieces, and levelGameBoard
         int numSnakes = rand.nextInt(1);
         for (int i = 0; i <= numSnakes; i++) {
         	int snakePosition = rand.nextInt(20) + 1;
@@ -51,6 +50,7 @@ public class LevelSetup {
             levelGameBoard[snakePosition] = hiss;
         }
         
+        // creates random number of new blackHole object and adds it to interactingPieces and levelGameBoard
         int numBlackhole = rand.nextInt(1);
         for (int i =0; i <= numBlackhole; i++) {
         	int blackHolePosition = rand.nextInt(3);
@@ -59,6 +59,7 @@ public class LevelSetup {
             levelGameBoard[blackHolePosition + 15] = hole;
         }
         
+        // if there is a higher floor to go to, creates a random number of door and adds them to interactingPieces, levelGameBoard
         if (levelNum < 2) {
         	int numDoorway = rand.nextInt(2);
         	for (int i = 0; i <= numDoorway; i++) {
@@ -69,10 +70,12 @@ public class LevelSetup {
         	}
         }
 
+        // creates random number of new bridges
         int bridgePosition = rand.nextInt(20);
         Bridge cobbleStone = new Bridge('-', "Bridge", bridgePosition);
         levelGameBoard[bridgePosition] = cobbleStone;
 
+        // creates random number of new keys
         int keyPosition = rand.nextInt(20);
         Key skeleton = new Key('k', "Key", keyPosition);
         interactingPieces.add(skeleton);
