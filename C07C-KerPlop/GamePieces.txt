@@ -1,0 +1,58 @@
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Blackhole - this class represents one of our unmovable interaction pieces, we did not need to 
+ * implement any moveable methods as this gamepiece only interacts with the player when the player comes
+ * within a space of the blackhole. This piece uses the Kill interaction and causes the player
+ * to return a dead status. 
+ * Date: 2/5/2024
+ * Sources: 
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Bridge - this class represents are unmovable and not interacting class, this one is just drawn
+ * to the gameboard and has the player and other game pieces pass over it. We did still include a
+ * Interaction method as it falls under a the gamepiece parent class but only returns and interaction
+ * of None
+ * Date: 2/5/2024
+ * Sources: 
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Doorway - this class represnts one of our unmovable and interaction classes, this doorway advances
+ * you to the next level of the same when it shares a space with the player. We implemented the advance 
+ * result for this classes interaction. 
+ * Date: 2/5/2024
+ * Sources: 
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Frog - this class represents one of our moveable and interacting pieces. We implemented the 
+ * interaction class when a player came within one space of the frog, but the player is allowed to step onto
+ * the frog and take no damage. We also implemented the move method for this class, allowing the frog to
+ * jump over a space on the next level. 
+ * Date: 2/5/2024
+ * Sources: 
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Key - This class represents our key gamepiece, which interacts and can be drawn but is not moveable. 
+ The key object has a status of GET_POINT if they are in the same location as the player, which allows the player to
+ advance to the next level. Otherwise, the key does not interact.
+ * Date: 2/5/2024
+ * Sources:
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: This class created our levels. Because the gameboard changes between levels this class had three
+ * very important arrays that stored the information of our game pieces. The first array which contained
+ * many of our game pieces was the interacting pieces array, any class that didnt result in a none interaction
+ * was put into this list once and instance of the class was created. The next array was movable, this
+ * array help instances of our snakes and frogs, once a snake or frog was created it was added to this
+ * array to be used later by gameEngine. The last array was of the actual level of the game, this array held
+ * all of the intances of the child classes because each of our gamepieces required to be added to the 
+ * gamebaord. We also created the instances of each of the child classes by using the random function. This
+ * allowed us to randomized if and where a game piece would be. 
+ * Date: 2/5/2024
+ * Sources: https://www.w3schools.com/java/java_arraylist.asp
+ https://www.geeksforgeeks.org/generating-random-numbers-in-java/
+
+ * Authors: Grace Luka and Caroline Schreier
+ * Class: Snake - This class represents our snake gamepiece. The snake is moveable, drawable, and interacts.
+ The snake moves forward one space if it can, if not it moves backwards if it can, and if not it stays still.
+ Its interaction result is HIT, and it only hits if it is in the same location as the player.  
+ * Date: 2/5/2024
+ * Sources:
