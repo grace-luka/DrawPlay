@@ -20,7 +20,7 @@ import gameEngine.Player;
 public class Snake extends GamePiece implements Moveable{
 	protected char symbol;
 	private String label ;
-	private int location;
+	//private int location;
 	
 	public Snake(char s, String l, int lo) {
 		super(s, l, lo);

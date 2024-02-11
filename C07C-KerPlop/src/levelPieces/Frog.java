@@ -19,7 +19,7 @@ public class Frog extends GamePiece implements Moveable, Drawable{
 	private String label ;
 	// Stores the piece location, which will be needed to interact
 	// with the player. 
-	private int location;
+	//private int location;
 
 	public Frog(char s, String l, int lo) {
 		super(s, l, lo);
