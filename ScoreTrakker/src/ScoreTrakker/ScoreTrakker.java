@@ -14,6 +14,7 @@
  * 			https://www.tutorialspoint.com/java/util/arraylist_add_index.htm
 			https://stackoverflow.com/questions/24975167/java-how-to-use-compareto-to-sort-an-arraylist
 			https://www.geeksforgeeks.org/comparable-interface-in-java-with-examples/
+			https://codegym.cc/groups/posts/arraylist-removeall-method-in-java
 			
 */
 
@@ -35,10 +36,6 @@ public class ScoreTrakker {
 	/*public void setinputFile(String inputFile) {
 		this.inputFile = inputFile;
 	}*/
-	
-	// private String outputFile
-	// public void setoutputFile(String outputFile){
-	// 		this.output = outputFile; }
 
 	// reads in a students name and score, stores information in a new student object, puts 
 	// object in studentList, and handles errors if the score for a student is not a number
@@ -47,7 +44,7 @@ public class ScoreTrakker {
 		String scoreNum = null;
 		Scanner in = null;
 		in = new Scanner(reader);
-		for (int i = 0; i < fileName.length(); i = i + 2) { //Put your try/catch block inside your loop that reads the file. 
+		for (int i = 0; i < 12; i = i + 2) { //Put your try/catch block inside your loop that reads the file. 
 			String name = in.nextLine();
 			try { 									// Include a try/catch block
 				scoreNum = in.nextLine();
@@ -56,6 +53,7 @@ public class ScoreTrakker {
 				studentList.add(student); // and stores student objects in ArrayList
 			} 
 			catch (NumberFormatException e) { //handle a NumberFormatException
+				//System.out.println("\n");
 				System.out.println("\nIncorrect format for " + name + " not a valid score: " + scoreNum + "\n"); // throws clause to loadDataFile, Your error message should include the student's name and offending value
 			}
 		}
@@ -73,6 +71,7 @@ public class ScoreTrakker {
 	// load each file in files, check whether each file exists and handle errors if it does not
     public void processFiles(){
 		for (int i = 0; i < files.length; i++) { //Loop through all the files in the files array. Use an iterated for loop (for each).
+			studentList.removeAll(studentList);
 			FileReader reader = null;
 			String inputFile = files[i];
 			try {//Within the loop, put a try/catch block around the calls to loadDataFile() and printInOrder() (even though printInOrder() doesn't throw an exception we'll put it inside the try/catch so that if an error is thrown from loadDataFile(), we won't do the print)
